@@ -15,4 +15,9 @@ class ContentOwner extends Model
     {
         $this->hasMany('App\Models\TblBook::class');
     }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return date('Y-m-d', strtotime($value));
+    }
 }
