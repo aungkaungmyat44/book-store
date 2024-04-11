@@ -14,7 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -34,9 +34,9 @@
                         <!-- Left Side Of Navbar -->
                         <div class="col-md-6">
                             <ul class="navbar-nav me-auto">
-                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('content_owners') }}" class="btn btn-outline-dark">Content Owners</a></li>
-                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('publishers') }}" class="btn btn-outline-dark">Publishers</a></li>
-                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('books.index') }}" class="btn btn-outline-dark">Books</a></li>
+                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('content_owners') }}" class="btn btn-outline-dark @if(request()->path() == 'content-owners') {{'bg-secondary'}} @endif">Content Owners</a></li>
+                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('publishers') }}" class="btn btn-outline-dark @if(request()->path() == 'publishers') {{'bg-secondary'}} @endif">Publishers</a></li>
+                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('books.index') }}" class="btn btn-outline-dark @if (preg_match('/^books\./', \Illuminate\Support\Facades\Route::currentRouteName())) {{'bg-secondary'}} @endif">Books</a></li>
                             </ul>
                         </div>
                         <!-- Right Side Of Navbar -->
