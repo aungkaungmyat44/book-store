@@ -19,11 +19,16 @@ class TblBook extends Model
 
     public function contentOwner() 
     {
-        $this->belongsTo('App\Models\ContentOwner::class');
+        return$this->belongsTo('App\Models\ContentOwner', 'co_id', 'id');
     }
 
     public function publisher() 
     {
-        $this->belongsTo('App\Models\Publisher::class');
+        return $this->belongsTo('App\Models\Publisher', 'publisher_id', 'id');
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return date('Y-m-d', strtotime($value));
     }
 }

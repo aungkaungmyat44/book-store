@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BookRequest extends FormRequest
+class BookUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,7 @@ class BookRequest extends FormRequest
             'unique_id' => 'required|string',
             'content_owner_id' => 'required|exists:content_owners,id',
             'publisher_id' => 'required|exists:publishers,id',
-            'cover_photo' => 'required|image|mimes:jpeg,bmp,png,jpg|max:5000'
+            'cover_photo' => !empty($this->input('cover_photo')) ? ['nullable'] : ['image','mimes:jpeg,bmp,png,jpg','max:5000']
         ];
     }
 }

@@ -13,7 +13,7 @@ class ContentOwner extends Model
 
     public function books() 
     {
-        $this->hasMany('App\Models\TblBook::class');
+        return $this->hasMany('App\Models\TblBook');
     }
 
     public function getCreatedAtAttribute($value)

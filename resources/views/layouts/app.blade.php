@@ -14,6 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -35,7 +36,7 @@
                             <ul class="navbar-nav me-auto">
                                 <li class="my-sm-2 mx-lg-2"><a href="{{ route('content_owners') }}" class="btn btn-outline-dark">Content Owners</a></li>
                                 <li class="my-sm-2 mx-lg-2"><a href="{{ route('publishers') }}" class="btn btn-outline-dark">Publishers</a></li>
-                                <li class="my-sm-2 mx-lg-2"><a href="" class="btn btn-outline-dark">Books</a></li>
+                                <li class="my-sm-2 mx-lg-2"><a href="{{ route('books.index') }}" class="btn btn-outline-dark">Books</a></li>
                             </ul>
                         </div>
                         <!-- Right Side Of Navbar -->
@@ -87,6 +88,7 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('js')
 </body>
 </html>
