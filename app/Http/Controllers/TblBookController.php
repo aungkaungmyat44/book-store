@@ -73,7 +73,7 @@ class TblBookController extends Controller
         
         $payLoad = [
             'name' => $data['name'],
-            'book_uniq_id' => $data['book_uniq_id'],
+            'book_uniq_id' => $data['unique_id'],
             'co_id' => $data['content_owner_id'],
             'publisher_id' => $data['publisher_id'],
             'cover_photo' => $coverName
